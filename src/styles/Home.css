@@ -168,6 +168,24 @@ button:hover {
   cursor: pointer;
 }
 
+@media (min-width:901px)and (max-width:1050px)
+{
+  .navbar-container {
+    display: flex;
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    z-index: 1001;
+    align-items: center;
+    width: 74%;
+    margin: 0 auto;
+    background-color: #002C49;
+   
+    height: 50px; /* Default height */
+    transition: height 0.3s ease; /* Smooth transition for height change */
+  }
+}
+
 /* Media Query for Mobile */
 @media (max-width: 900px) {
   .icon-container {
