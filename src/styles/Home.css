@@ -76,7 +76,7 @@ button:hover {
   margin: 0 auto;
   background-color: #002C49;
  
-  height: 50px; /* Default height */
+  
   transition: height 0.3s ease; /* Smooth transition for height change */
 }
 
@@ -560,7 +560,7 @@ button:hover {
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: auto;
+  /* width: auto; */
   
 }
 
