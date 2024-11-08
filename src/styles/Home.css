@@ -560,9 +560,12 @@ button:hover {
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  /* width: auto; */
-  
+  width: auto;
 }
+
+
+
+
 
 .button-container{
   display: flex;
@@ -617,6 +620,7 @@ button:hover {
 
   .form-row {
     width: 100%;
+
    
   }
   
@@ -628,7 +632,16 @@ button:hover {
   .time-inputs {
     width: 100%;
   }
+ 
 }
+
+
+@media (max-width: 1000px) {
+  .form-row input {
+    width: 100%; /* Set input fields to take full width */
+  }
+}
+
 
 /* fleets *//* fleets */
 /* fleets */
