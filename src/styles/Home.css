@@ -1,0 +1,1277 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  border-radius: 0px;
+  overflow-x: hidden;
+}
+.home-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+/* Apply grey left border */
+.icon-container {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  border-left: 1px solid rgb(219, 215, 215);
+  gap: 10px;
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+}
+
+/* Style for the text content */
+.text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+h4 {
+  margin: 0;
+  font-weight: bold;
+  color: #424242;
+}
+
+.icon-container p {
+  margin: 5px 0 0;
+  color: #424242;
+}
+
+button {
+  padding: 15px 30px;
+  background-color: #1e73be;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #165a9d; /* Slightly darker blue for hover effect */
+}
+
+/* Navbar container */
+/* General Styles for Navbar */
+.navbar-container {
+  display: flex;
+  position: absolute;
+  top: 110px;
+  left: 200px;
+  z-index: 1001;
+  align-items: center;
+  width: 74%;
+  margin: 0 auto;
+  background-color: #002C49;
+ 
+  height: 50px; /* Default height */
+  transition: height 0.3s ease; /* Smooth transition for height change */
+}
+
+.navbar-container.expanded {
+  height: 300px; /* Expanded height when the hamburger menu is open */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 17px;
+  font-family: "Source Sans 3", sans-serif;
+  color: white;
+ 
+}
+
+.navbar-items {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar-items p {
+  font-size: 1.1rem;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0px;
+}
+
+.navbar-items p.active {
+
+  background-color: #1E73BE;
+}
+
+.navbar-search {
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+}
+
+/* Default Hamburger Menu - Hidden */
+.hamburger {
+  display: none;
+}
+
+/* Mobile menu styles */
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #002C49;
+  width: 100%;
+  height: 100%;
+  padding: 10px 0;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1002;
+}
+
+.mobile-menu.open {
+  transform: translateY(0); /* Slide down */
+}
+
+.mobile-menu p {
+  padding: 15px 20px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+   
+}
+
+.mobile-menu p.active {
+  font-weight: bold;
+  color: #1E73BE;
+}
+
+/* Close Icon */
+.close-icon {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 900px) {
+  .icon-container {
+    display: none; /* Hide icon container on mobile */
+  }
+
+  /* Show hamburger menu when screen is below 900px */
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: white;
+    margin-right: 40px;
+  }
+
+  .navbar-container {
+    width: 100%;
+    left: 0;
+  }
+
+  .navbar-items {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #002C49;
+    position: absolute;
+    top: 110px;
+  }
+
+  .navbar-items p {
+    padding: 15px 20px;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .navbar-items {
+    display:none;
+
+  }
+}
+
+/* Styles for Fixed Navbar */
+.navbar-container.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #002C49;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container.fixed .navbar {
+  color: white;
+}
+
+
+
+
+.carousel-container {
+    width: 100%;
+    position: relative;
+  }
+  
+  .carousel-container img {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+  }
+  
+  .slide-content {
+    position: relative;
+  }
+  
+  .text-overlay {
+    position: absolute;
+    color: white;
+    max-width: 60%;
+    z-index: 1;
+  }
+  
+  .text-overlay h1 {
+    font-size: 64px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+  }
+  
+  .text-overlay p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+   
+  }
+  
+  .text-overlay .button2 {
+    background-color: #1E73BE;
+    color: white;
+    padding: 16px 35px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    /* align-items: center; */
+    margin: 0 auto;
+  }
+  
+  /* Alignment for the first slide */
+  .left-align .text-overlay {
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+  }
+  
+  /* Center alignment for the other slides */
+  .center-align .text-overlay {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  
+  
+  .custom-arrow {
+    color: white;
+    background: transparent;
+    border-radius: 50%;
+    width: 70px; /* Increase width */
+    height: 70px; /* Increase height */
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 32px; /* Increase font size for larger arrow */
+  }
+  
+  .prev-arrow {
+    left: 10px;
+  }
+  
+  .next-arrow {
+    right: 10px;
+  }
+
+
+  /* Medium screens (max-width: 992px) */
+@media (max-width: 992px) {
+  .text-overlay h1 {
+    font-size: 48px; /* Reduced heading size */
+  }
+  
+  .text-overlay p {
+    font-size: 1.1em; /* Slightly smaller text */
+  }
+
+  .text-overlay .button2 {
+    padding: 14px 30px;
+    font-size: 15px;
+  }
+
+  .custom-arrow {
+    width: 60px; /* Smaller width for arrows */
+    height: 60px;
+    font-size: 28px; /* Slightly smaller arrow icon */
+  }
+}
+
+/* Small screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .text-overlay h1 {
+    font-size: 40px; /* Further reduced heading size */
+  }
+
+  .text-overlay p {
+    font-size: 1em; /* Smaller paragraph font */
+  }
+
+  .text-overlay .button2 {
+    padding: 12px 25px;
+    font-size: 14px;
+  }
+
+  .custom-arrow {
+    width: 50px;
+    height: 50px;
+    font-size: 24px; /* Smaller arrow icon */
+  }
+  .carousel-container img{
+    height:490px
+  }
+}
+
+/* Extra small screens (max-width: 576px) */
+@media (max-width: 576px) {
+  .text-overlay h1 {
+    font-size: 32px; /* Further reduce heading size for mobile */
+  }
+
+  .text-overlay p {
+    font-size: 0.9em; /* Smaller paragraph font */
+  }
+
+  .text-overlay {
+    max-width: 80%; /* Increase width for better readability */
+  }
+
+  .text-overlay .button2 {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  .custom-arrow {
+    width: 40px; /* Smallest arrow size for mobile */
+    height: 40px;
+    font-size: 20px;
+  }
+  .carousel-container img{
+    height:490px
+  }
+}
+
+  
+
+/* facility section */
+
+/* facility section */
+.facility-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next row */
+    gap: 20px; /* Space between boxes */
+    padding: 20px;
+    width:80%;
+   margin: 0 auto;
+  }
+  
+  .facility-box {
+    display: flex;
+    /* align-items: center; */
+    padding: 20px;
+    /* border: 1px solid #e0e0e0; */
+    border-radius: 8px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    flex: 1 1 45%; /* Each box takes up nearly half the container's width */
+    min-width: 300px; /* Minimum width to prevent shrinking too much */
+    box-sizing: border-box;
+  }
+  
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    /* background-color: #f5f5f5; */
+    border:3px solid #1e73be;
+    /* border-radius: 8px; */
+    margin-right: 15px;
+    padding: 10px 15px;
+  }
+  
+  .facility-box h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #070707;
+    margin-left: 20px;
+  }
+  
+  .facility-box hr {
+    border: none;
+    border-top: 2px solid #1E73BE; /* Blue color for hr */
+    width: 35px;
+    margin: 8px 0;
+  }
+  
+  .facility-box p {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #555;
+    margin-top: 15px;
+    margin-left: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+
+/* booking section */
+.booking-container {
+  background-color: #06273d;
+  padding: 20px;
+  color: #fff;
+  display: flex;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  width: 250px; /* Fixed width for tabs */
+  margin-right: 20px; /* Space between tabs and content */
+}
+
+.tab {
+  padding: 15px;
+  background-color: #1e73be;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  
+  font-weight: bold;
+  margin-bottom: 5px;
+  height:50px;
+}
+
+.tab.active {
+  background-color: #06273d;
+ 
+}
+
+.tab:hover {
+  background-color: #145a9c;
+}
+
+.tab-content {
+  flex: 1; /* Allow content to take up remaining space */
+  padding: 20px;
+  border-radius: 5px;
+  color: #333;
+ 
+}
+
+.form-section {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px; /* Add space between label and input */
+}
+
+.form-row label {
+  width: 150px;
+  font-weight: bold;
+  color:white;
+}
+
+.time-inputs{
+  display: flex;
+  gap: 5px;
+}
+
+
+
+.form-row input {
+  padding: 12px; /* Increase padding for input fields */
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: auto;
+  
+}
+
+.button-container{
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.book-button {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-radius: 0px;
+}
+
+.book-button:hover {
+  background-color: #145a9c;
+  transform: scale(1.05); /* Add hover scale effect */
+}
+
+.book-button:active {
+  background-color:  #145a9c; /* Darker blue when clicked */
+}
+
+@media (max-width: 1030px) {
+  .booking-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+
+  .tabs {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height:50px;
+    overflow-y: hidden;
+    margin-bottom: 20px; /* Space between tabs and content in smaller screens */
+  }
+
+  .tab {
+    margin-bottom: 0; /* Remove bottom margin when in row layout */
+    margin-right: 5px; /* Add right margin for spacing */
+    flex: 1;
+  }
+
+  .tab-content {
+    width: 100%;
+  }
+
+  .form-section {
+    flex-direction: column;
+  }
+
+  .form-row {
+    width: 100%;
+   
+  }
+  
+  .form-row label {
+    width: 100%; /* Full width labels */
+    text-align: left;
+  }
+
+  .time-inputs {
+    width: 100%;
+  }
+}
+
+/* fleets *//* fleets */
+/* fleets */
+
+.fleet-container {
+  text-align: center;
+  padding: 20px;
+  width: 80%;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0 auto; /* Center the fleet section */
+}
+
+.fleet-container h3 {
+  font-size: 2rem;
+  
+  margin-top: 30px;
+
+  font-weight: 100;
+  color: #333;
+}
+
+.fleet-container p {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.fleet-hr{
+  width: 10%;
+  text-align: center;
+  height: 2px;
+   background-color: #165a9d;
+  margin:  0 auto;
+  margin-top: 10px;
+}
+
+/* Styling for individual fleet cards */
+.outer-card-container {
+  padding: 5px; /* Reduce padding around cards */
+  margin: 0 auto; /* Center cards within the carousel */
+  display: flex;
+  justify-content: center;
+}
+
+.fleet-card {
+  background-color: #fff;
+  /* height: 300px; */
+  overflow: hidden;
+  padding: 15px;
+  transition: transform 0.3s ease;
+  position: relative;
+  text-align: left;
+  width: 100%; /* Make card take full width of container */
+  max-width: 250px; /* Optional: Limit max width of each card */
+  border: 1px solid rgb(189, 184, 184);
+}
+
+.fleet-image {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid rgb(209, 206, 206);
+}
+
+.price-button {
+  background-color: #165a9d;
+  color: #fff;
+  border-radius: 0!important;
+  padding: 5px 10px;
+  font-weight: bold;
+  position: absolute;
+  top: 155px;
+  right: 130px;
+}
+
+.fleet-card hr {
+  width: 30%;
+  height: 2px;
+   background-color: #165a9d;
+   margin-top: 10px;
+}
+
+.car-name {
+  font-size: 1.3rem;
+  color: #333;
+  margin-top: 20px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+}
+
+.fleet-card p {
+  font-size: 0.9rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+ 
+
+  .car-name {
+    font-size: 1.2rem;
+  }
+}.fleet-container .react-multi-carousel-dot-list {
+  position: relative;
+  bottom: -20px; /* Adjust this value to move dots lower */
+  display: flex;
+  justify-content: center;
+}
+
+.fleet-container .react-multi-carousel-dot button {
+  background-color: #ccc !important;
+  border: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.fleet-container .react-multi-carousel-dot--active button {
+  background-color: #145a9c !important;
+}
+
+
+
+/* ABout us */
+
+
+.about-us-container {
+  width: 80%; /* Centers the container to 70% of the page width */
+  margin: 0 auto; /* Centers the container horizontally */
+  font-family: "Source Sans 3", sans-serif;
+  padding-top:50px;
+ padding-bottom: 70px;
+
+}
+
+.about-us-heading {
+  text-align: left; /* Aligns the heading to the left */
+  color:#424242;
+  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+}
+
+.about-us-content {
+  display: flex; /* Creates a flex container */
+  justify-content: space-between; /* Places text on the left and image on the right */
+  align-items: center; /* Vertically aligns content */
+  gap: 20px; /* Adds space between text and image */
+  
+}
+
+.about-hr{
+  width: 6%;
+  height: 2px;
+   background-color: #165a9d;
+   margin-top: 10px;
+}
+
+.text-section {
+  flex: 1; /* Takes up available space for the text */
+  color:#424242
+}
+
+.image-section img {
+  width: 100%; /* Makes the image take up available space */
+  max-width: 600px; /* Optional: Sets a max-width for the image */
+  height: auto; /* Maintains the aspect ratio */
+  object-fit: cover;
+}
+
+.learnmore {
+  margin-top: 20px;
+  padding: 20px 24px;
+  background-color: #145a9c;
+
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.learnmore:hover {
+  background-color: #0c3c5f;
+}
+
+@media (max-width: 990px) {
+  
+.about-us-container {
+  width: 90%; /* Centers the container to 70% of the page width */
+  
+
+}
+  .about-us-content {
+    flex-direction: column; /* Stack content vertically */
+    width: 100%; /* Make it take full width */
+    align-items: center; /* Align text to the left */
+  }
+
+  .image-section {
+    display: none; /* Hide the image section */
+  }
+
+  .text-section {
+    width: 100%; /* Make text section occupy full width */
+  }
+}
+
+
+
+/* callus section */
+/* callus section *//* Booking section */
+/* Booking section */
+.booking-section {
+  position: relative; /* To allow positioning the content over the image */
+  width: 100%;
+  height: 50vh; /* Set a fixed height to prevent scrolling */
+  display: flex; /* Using flexbox */
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  text-align: center; /* Center text content */
+  overflow: hidden; /* Hide any overflow to prevent scrolling */
+  margin-bottom: 50px;
+}
+
+.booking-section img {
+  width: 100%; /* Make the image occupy the full width */
+  height: 100%; /* Make sure the image fully covers the container */
+  object-fit: cover; /* Ensure the image covers the container without distortion */
+  position: absolute; /* Position the image in the background */
+  top: 0;
+  left: 0;
+}
+
+.content-wrapper {
+  text-align: center; /* Center the text */
+  color: white; /* White text to contrast with the image */
+  z-index: 1; /* Ensure the content is above the image */
+  padding: 20px; /* Add some padding if needed */
+}
+
+.booking-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.booking-section hr {
+  width: 50%;
+  border: 1px solid #ffffff;
+  margin: 10px auto;
+}
+
+.booking-section p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.booking-section button {
+  padding: 10px 20px;
+  background-color: #145a9c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.booking-section button:hover {
+  background-color: #0c3c5f;
+}
+
+
+
+/* Gallery section */
+
+/* Main container for the gallery and reviews */
+.gallery-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 80%;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+/* Fleet Gallery Section */
+.fleet-gallery {
+  width: 50%;
+  text-align: center;
+}
+
+.fleet-gallery h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 300;
+}
+
+.fleet-gallery hr {
+  width: 50%;
+  margin: 10px auto;
+}
+
+.gallery-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+  gap: 10px;
+}
+
+.gallery-images img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Customer Reviews Section */
+.customer-reviews {
+  width: 35%;
+  text-align: center;
+}
+
+.customer-reviews h2 {
+  font-size: 1.8rem;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 300;
+  
+}
+/* Style for gallery and customer review hr */
+.gallery-hr, .customer-hr {
+  height: 2px;
+  border: none;
+  background-color: #145a9c; /* Make sure the color is visible */
+  margin: 10px auto;
+}
+
+.gallery-hr {
+  width: 20%!important; /* Adjust the width if needed */
+}
+
+.customer-hr {
+  width: 20%!important; /* Adjust the width if needed */
+}
+
+.customer-reviews hr {
+  width: 50%;
+  margin: 10px auto;
+}
+
+/* Review Box Styling */
+.review-box {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 12px;
+
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+/* 
+.review-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.15);
+} */
+
+/* Quote styling */
+.review-box p {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 10px 0;
+  padding: 0 15px;
+  text-align: center;
+  position: relative;
+  overflow-y: hidden;
+}
+
+/* .review-box p::before, .review-box p::after {
+  font-size: 1.2rem;
+  color: #d6a621;
+  position: absolute;
+} */
+/* 
+.review-box p::before {
+  content: "“";
+  top: -10px;
+  left: 0;
+}
+
+.review-box p::after {
+  content: "”";
+  bottom: -10px;
+  right: 0;
+} */
+
+/* Style for the review images */
+.review-box img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 10px 0;
+  border: 2px solid #d6a621; /* Accent border */
+}
+
+/* Review author style */
+.review-author {
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* For screens below 800px */
+@media (min-width: 701px) and (max-width: 1000px) {
+  .gallery-section {
+    width: 100%; /* Full width for both sections */
+    gap: 20px; /* Keep some spacing between sections */
+    padding: 20px;
+  }
+
+  .fleet-gallery, .customer-reviews {
+    width: 100%; /* Each section takes up full width */
+  }
+
+  .gallery-images {
+    grid-template-columns: repeat(2, 1fr); /* Show 2 images per row */
+  }
+
+  .gallery-images img {
+    width: 170px;
+  }
+
+  /* Hide the last image */
+  .gallery-images img:last-child {
+    display: none;
+  }
+
+  .review-box {
+    margin-right: 40px;
+  }
+}
+
+
+/* For screens below 600px */
+@media (min-width: 300px) and (max-width: 700px){
+  .gallery-section {
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .fleet-gallery, .customer-reviews {
+    width: 100%;
+  }
+
+  .gallery-images {
+    grid-template-columns: repeat(2, 1fr); /* Show 1 image per row */
+  }
+
+  .fleet-gallery h2, .customer-reviews h2 {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+
+  .review-box p {
+    font-size: 0.9rem; /* Adjust font size for review text */
+  }
+  .gallery-images img:last-child {
+    display: none;
+  }
+  .review-author {
+    font-size: 0.8rem; /* Adjust author font size */
+  }
+  .review-box {
+    margin-right: 40px;
+  }
+}
+
+
+
+
+
+
+/* Footer sec */
+/* Footer styles */
+/* Footer styles *//* Footer styles */
+.footer {
+  background-color: #002C49;
+  color: #fff;
+  margin-top: 60px;
+  padding: 40px 20px;
+ 
+  width: 100%; /* Ensure the background spans the full width */
+}
+
+.footer-content {
+  width: 80%; /* Set content width to 80% of the screen */
+  margin: 0 auto; /* Center the content horizontally */
+  display: flex; /* Use flexbox for horizontal layout */
+  justify-content: space-between; /* Spread out the content sections */
+  align-items: flex-start; /* Align items at the top */
+  gap: 20px; /* Equal gap between sections */
+ 
+}
+
+.about-us {
+  flex: 1 1 40%; /* Flex-grow 1, flex-shrink 1, and basis 40% */
+}
+
+.about-us p {
+  margin-bottom: 0; /* Remove any extra bottom margin */
+}
+
+.footer-content h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 20px; /* Reduced margin for better alignment */
+}
+
+.footer-content p, .footer-content ul {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0; /* Remove extra margin to reduce gaps */
+}
+
+.quick-links, .contact-details {
+  flex: 1 1 30%; /* Flex-grow 1, flex-shrink 1, and basis 30% */
+  min-width: 200px; /* Minimum width to avoid shrinking too much */
+}
+
+
+.quick-links{
+  margin-left: 50px;
+  font-family: "Source Sans 3", sans-serif;
+}
+.quick-links ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.quick-links li {
+  margin: 8px 0; /* Reduced margin between quick links */
+}
+
+.quick-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.quick-links a:hover {
+  text-decoration: underline;
+}
+
+.contact-details p {
+  margin-bottom: 5px;
+  font-family: "Source Sans 3", sans-serif;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Stack the sections vertically on smaller screens */
+    align-items: center; /* Center the sections */
+    width: 90%; /* Reduce width on smaller screens */
+  }
+  .footer-content h3 {
+    text-align: left;
+  }
+}
+
+.quick-hr, .foot-about-hr , .contact-hr {
+  height: 2px;
+  border: none;
+  background-color: #145a9c; /* Make sure the color is visible */
+ margin-bottom: 20px;
+  width:20%;
+}
+
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Stack the sections vertically */
+    align-items: center;
+    width: 90%; /* Reduce width on smaller screens */
+  }
+
+  .footer-content h3 {
+    text-align: left;
+    font-size: 1.4rem;
+  }
+
+  .footer-content p, .footer-content ul {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .quick-links, .contact-details {
+    width: 100%;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 0px;
+  }
+}
+
+/* Small screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 10px;
+  }
+
+  .footer-content {
+    width: 100%; /* Full width on very small screens */
+  }
+
+  .footer-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .quick-links{
+    margin-left: 0px;
+  }
+
+  .footer-content p, .footer-content ul {
+    font-size: 0.85rem;
+  }
+
+  .quick-links ul, .contact-details {
+    font-size: 0.85rem;
+  }
+
+  .quick-hr, .foot-about-hr, .contact-hr {
+    width: 30%; /* Wider line for easier visibility on smaller screens */
+  }
+
+  .footer-bottom p {
+    font-size: 0.8rem;
+  }
+
+}
